@@ -15,9 +15,12 @@ function App() {
         return;
       }
       setLoading(true);
-      const res = await axios.post("http://localhost:2005/analyze", {
-        error: error,
-      });
+      const res = await axios.post(
+        "https://dev-error-analyzer.onrender.com/analyze",
+        {
+          error: error,
+        },
+      );
       setResponse(res.data.data);
       setError("");
     } catch (error) {
