@@ -46,10 +46,10 @@ function App() {
           </div>
         </div>
       )}
-      <div className="min-h-screen bg-zinc-950 text-white p-6">
-        <nav className="flex items-center justify-between mb-10 border-b border-zinc-800 pb-4">
+      <div className="min-h-screen bg-zinc-950 text-white p-4 md:p-6 overflow-x-hidden">
+        <nav className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-10 border-b border-zinc-800 pb-4">
           <div>
-            <h1 className="text-2xl font-bold tracking-tight">
+            <h1 className="text-xl md:text-2xl font-bold tracking-tight">
               Dev Error Analyzer
             </h1>
             <p className="text-sm text-zinc-400">
@@ -57,24 +57,30 @@ function App() {
             </p>
           </div>
 
-          <button className="bg-white text-black px-4 py-2 rounded-xl font-medium hover:opacity-90 transition">
-            GitHub
-          </button>
+          <a
+            href="https://github.com/KRATOS9810/Dev-Error-Analyzer"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="bg-white text-black px-4 py-2 rounded-xl font-medium hover:opacity-90 transition">
+              GitHub
+            </button>
+          </a>
         </nav>
-        <section className="max-w-5xl mx-auto">
+        <section className="w-full max-w-5xl mx-auto">
           <div className="mb-8 text-center">
-            <h2 className="text-5xl font-bold leading-tight mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-4">
               Understand Errors Instantly
             </h2>
 
-            <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
+            <p className="text-zinc-400 text-sm md:text-lg max-w-2xl mx-auto px-2">
               Paste your React, Node.js, Express, or MongoDB errors and get
               AI-generated explanations, probable causes, and fixes in seconds.
             </p>
           </div>
 
-          <div className="bg-zinc-900 border border-zinc-800 rounded-3xl shadow-2xl p-6">
-            <div className="flex items-center justify-between mb-4">
+          <div className="bg-zinc-900 border border-zinc-800 rounded-3xl shadow-2xl p-4 md:p-6">
+            <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between mb-4">
               <h3 className="text-xl font-semibold">Paste Your Error</h3>
 
               <span className="text-xs bg-zinc-800 px-3 py-1 rounded-full text-zinc-300">
@@ -88,10 +94,10 @@ function App() {
               }}
               value={error}
               placeholder={`Example:\nTypeError: Cannot read properties of undefined (reading 'map')`}
-              className="w-full h-64 bg-black border border-zinc-700 rounded-2xl p-4 text-sm font-mono outline-none resize-none focus:border-white transition"
+              className="w-full h-52 md:h-64 bg-black border border-zinc-700 rounded-2xl p-4 text-sm md:text-base font-mono outline-none resize-none focus:border-white transition"
             />
 
-            <div className="flex items-center justify-between mt-5">
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mt-5">
               <div className="flex gap-2 flex-wrap">
                 <span className="bg-zinc-800 px-3 py-1 rounded-full text-sm text-zinc-300">
                   React
@@ -111,7 +117,7 @@ function App() {
               </div>
 
               <button
-                className="bg-white text-black px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition-transform"
+                className="w-full md:w-auto bg-white text-black px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition-transform disabled:opacity-50"
                 disabled={loading}
                 onClick={() => {
                   submitData();
@@ -123,10 +129,10 @@ function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-5">
+            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-4 md:p-5 overflow-hidden">
               <h3 className="text-lg font-semibold mb-3">Explanation</h3>
 
-              <p className="text-zinc-300 leading-relaxed whitespace-pre-wrap">
+              <p className="text-zinc-300 leading-relaxed whitespace-pre-wrap break-words">
                 {response?.explanation || "AI explanation will appear here..."}
               </p>
             </div>
@@ -158,7 +164,9 @@ function App() {
           </div>
 
           <section className="mt-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Features</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
+              Features
+            </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-6">
@@ -169,7 +177,7 @@ function App() {
                 </p>
               </div>
 
-              <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-6">
+              <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-5 md:p-6">
                 <h3 className="text-lg font-semibold mb-2">Suggested Fixes</h3>
                 <p className="text-zinc-400 text-sm leading-relaxed">
                   Generates possible fixes and debugging strategies instantly.
