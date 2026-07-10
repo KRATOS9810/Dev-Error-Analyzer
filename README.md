@@ -51,14 +51,14 @@ cd data-dev-analyzer
 **Frontend**
 
 ```bash
-cd client
+cd Frontend
 npm install
 ```
 
 **Backend**
 
 ```bash
-cd ../server
+cd ../Backend
 npm install
 ```
 
@@ -80,14 +80,14 @@ PORT=5000
 ### Start the backend
 
 ```bash
-cd server
+cd Backend
 npm run dev
 ```
 
 ### Start the frontend
 
 ```bash
-cd client
+cd Frontend
 npm run dev
 ```
 
@@ -105,16 +105,6 @@ http://localhost:5000
 
 ---
 
-## 📸 Screenshots
-
-Add screenshots of your application here.
-
-```text
-images/
-├── home.png
-├── add-entry.png
-├── edit-entry.png
-```
 
 Example:
 
